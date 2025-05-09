@@ -1,0 +1,52 @@
+<mat-toolbar class="navbar">
+    <div class="navbar-brand" (click)="navigateTo('/')">
+        <span class="app-name">IATEC</span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="navbar-menu" *ngIf="authService.isAuthenticated()">
+
+        <button mat-button class="nav-item" (click)="navigateTo('/add')">
+            <mat-icon>add</mat-icon>
+            <span>Crear Ideas</span>
+        </button>
+
+        <button mat-button class="nav-item" (click)="navigateTo('/lista')">
+            <mat-icon>list</mat-icon>
+            <span>Lista de Ideas</span>
+        </button>
+
+        <button mat-button class="nav-item" (click)="navigateTo('/home')">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </button>
+
+    </div>
+
+    <div class="navbar-user" *ngIf="authService.isAuthenticated()">
+        <button mat-icon-button [matMenuTriggerFor]="userMenu" class="user-avatar-button"
+            matTooltip="Opciones de usuario">
+            <div class="avatar-container">
+                <img src="profile.png" alt="Perfil" class="user-avatar">
+            </div>
+        </button>
+
+        <mat-menu #userMenu="matMenu" xPosition="before" class="user-menu">
+            <div class="user-menu-header">
+                <img src="profile.png" alt="Perfil" class="user-menu-avatar">
+                <div class="user-menu-info">
+                    <span class="user-menu-name">{{ authService.currentUserValue?.nombre }}</span>
+                    <span class="user-menu-email">{{ authService.currentUserValue?.correo || '' }}</span>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <button mat-menu-item (click)="logout()" class="logout-button">
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Cerrar sesión</span>
+            </button>
+        </mat-menu>
+    </div>
+</mat-toolbar>

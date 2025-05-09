@@ -1,0 +1,80 @@
+<div class="idea-list-container">
+    <div class="header">
+        <h1>💡 Lista de Ideas Inspiradoras</h1>
+        <p class="subtitle">Explora tus ideas</p>
+    </div>
+
+    @if (isLoading) {
+    <div class="loading">
+        <div class="spinner"></div>
+        <p>Cargando ideas inspiradoras...</p>
+    </div>
+    } @else {
+    <div class="ideas-grid">
+        @for (idea of allIdeas; track idea.name) {
+        <div class="idea-card" [style.border-top-color]="idea.color">
+            <div class="card-header">
+                <span class="idea-badge" [class.static]="idea.isStatic">
+                    {{ idea.isStatic ? 'Ejemplo' : 'Tu idea' }}
+                </span>
+                <h2>{{ idea.name }}</h2>
+            </div>
+
+            <div class="card-body">
+                <div class="concept-section">
+                    <h3>Concepto Clave</h3>
+                    <p>{{ idea.concept }}</p>
+                </div>
+
+                <div class="problem-section">
+                    <h3>Problema que Resuelve</h3>
+                    <p>{{ idea.problem }}</p>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="icon">🌐</i>
+                        <div>
+                            <h4>Mercado</h4>
+                            <p>{{ idea.market }}</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <i class="icon">👥</i>
+                        <div>
+                            <h4>Audiencia</h4>
+                            <p>{{ idea.audience }}</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <i class="icon">✨</i>
+                        <div>
+                            <h4>Valor Único</h4>
+                            <p>{{ idea.uniqueValue }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Próximos Pasos</h3>
+                    <ul>
+                        @for (step of idea.nextSteps; track step) {
+                        <li>{{ step }}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-footer">
+
+                @if (!idea.isStatic) {
+                <button class="edit-btn">Editar</button>
+                }
+            </div>
+        </div>
+        }
+    </div>
+    }
+</div>

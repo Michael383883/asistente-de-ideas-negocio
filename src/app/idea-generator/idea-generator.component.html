@@ -1,0 +1,151 @@
+
+<div class="main-container">
+    
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo"></div>
+            <h1 class="title">CREA TU IDEAS DE NEGOCIO</h1>
+        </div>
+    </header>
+
+
+    <div class="content-container">
+
+        <div class="form-container">
+            <h2 class="section-title">EXPLORA TU IDEA</h2>
+
+
+            <div class="question-block">
+                <div class="question-number">1</div>
+                <div class="question-content">
+                    <label class="question-label">¿Qué es lo primero que se te viene a la mente cuando piensas en esta
+                        idea?</label>
+                    <p class="question-hint">(Una palabra, una imagen, una sensación o una necesidad)</p>
+                    <textarea class="input-field" placeholder="Escribe aquí tu respuesta..."
+                        [(ngModel)]="responses.first"></textarea>
+                </div>
+            </div>
+
+
+            <div class="question-block">
+                <div class="question-number">2</div>
+                <div class="question-content">
+                    <label class="question-label">¿Qué problema, deseo o situación específica te inspiró a pensar en
+                        esto?</label>
+                    <p class="question-hint">(Aquí se busca la raíz emocional o práctica)</p>
+                    <textarea class="input-field" placeholder="Escribe aquí tu respuesta..."
+                        [(ngModel)]="responses.second"></textarea>
+                </div>
+            </div>
+
+            <div class="question-block">
+                <div class="question-number">3</div>
+                <div class="question-content">
+                    <label class="question-label">¿Dónde te imaginas que esta idea podría aplicarse o existir?</label>
+                    <p class="question-hint">(Un lugar, un mercado, un entorno: digital, físico, local, global...)</p>
+                    <textarea class="input-field" placeholder="Escribe aquí tu respuesta..."
+                        [(ngModel)]="responses.third"></textarea>
+                </div>
+            </div>
+
+
+            <div class="question-block">
+                <div class="question-number">4</div>
+                <div class="question-content">
+                    <label class="question-label">¿A quién crees que podría interesarle o beneficiarle
+                        directamente?</label>
+                    <p class="question-hint">(Define un tipo de persona, no hace falta que sea muy técnico)</p>
+                    <textarea class="input-field" placeholder="Escribe aquí tu respuesta..."
+                        [(ngModel)]="responses.fourth"></textarea>
+                </div>
+            </div>
+
+
+            <div class="question-block">
+                <div class="question-number">5</div>
+                <div class="question-content">
+                    <label class="question-label">¿Qué haría esta idea diferente o especial frente a otras similares que
+                        conozcas?</label>
+                    <p class="question-hint">(Aquí se busca el "valor único", aunque aún no esté del todo claro)</p>
+                    <textarea class="input-field" placeholder="Escribe aquí tu respuesta..."
+                        [(ngModel)]="responses.fifth"></textarea>
+                </div>
+            </div>
+
+
+            <div class="action-buttons">
+                <button class="generate-btn" (click)="generateIdea()">
+                    <span class="btn-text">GENERAR IDEA</span>
+                    <span class="btn-icon">+</span>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="idea-result" *ngIf="ideaGenerated">
+            <div class="idea-header">
+                <h3 class="idea-title">TU IDEA DE NEGOCIO</h3>
+                <div class="idea-actions">
+                    <button class="save-btn" [disabled]="ideaSaved" (click)="saveIdea()" *ngIf="!ideaSaved">
+                        <span class="btn-icon-small">💾</span>
+                        Guardar
+                    </button>
+                    <button class="saved-indicator" *ngIf="ideaSaved">
+                        <span class="btn-icon-small">✓</span>
+                        Guardada
+                    </button>
+                    <button class="delete-btn" (click)="deleteIdea()">
+                        <span class="btn-icon-small">🗑️</span>
+                        Borrar
+                    </button>
+                </div>
+            </div>
+
+            <div class="idea-content">
+                <div class="idea-bubble">
+                    <div class="idea-icon">💡</div>
+                    <h4 class="idea-name">{{ generatedIdea.name }}</h4>
+                </div>
+
+                <div class="idea-details">
+                    <div class="detail-block">
+                        <h5 class="detail-title">CONCEPTO</h5>
+                        <p class="detail-text">{{ generatedIdea.concept }}</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h5 class="detail-title">PROBLEMA QUE RESUELVE</h5>
+                        <p class="detail-text">{{ generatedIdea.problem }}</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h5 class="detail-title">MERCADO POTENCIAL</h5>
+                        <p class="detail-text">{{ generatedIdea.market }}</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h5 class="detail-title">PÚBLICO OBJETIVO</h5>
+                        <p class="detail-text">{{ generatedIdea.audience }}</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h5 class="detail-title">PROPUESTA DE VALOR</h5>
+                        <p class="detail-text">{{ generatedIdea.uniqueValue }}</p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h5 class="detail-title">PRÓXIMOS PASOS RECOMENDADOS</h5>
+                        <ul class="next-steps">
+                            <li *ngFor="let step of generatedIdea.nextSteps">{{ step }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p class="footer-text">Tu camino emprendedor comienza con una idea.</p>
+    </footer>
+</div>

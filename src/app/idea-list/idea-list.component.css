@@ -1,0 +1,314 @@
+.idea-list-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px dashed #c4b5fd;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner {
+    border: 5px solid #f3f4f6;
+    border-top: 5px solid #8b5cf6;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.idea-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-top: 6px solid;
+    position: relative;
+}
+
+.idea-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.2);
+}
+
+.card-header {
+    padding: 1.5rem;
+    position: relative;
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+.idea-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.idea-badge.static {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.idea-badge:not(.static) {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #4c1d95;
+    padding-right: 80px;
+}
+
+.card-body {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.concept-section,
+.problem-section {
+    margin-bottom: 1.5rem;
+}
+
+.concept-section h3,
+.problem-section h3,
+.next-steps h3 {
+    color: #7c3aed;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.concept-section h3::before,
+.problem-section h3::before {
+    content: "✨";
+}
+
+.next-steps h3::before {
+    content: "🚀";
+}
+
+.concept-section p,
+.problem-section p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin: 2rem 0;
+}
+
+.detail-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+    background: #f3f4f6;
+    transform: translateX(5px);
+}
+
+.detail-item .icon {
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.detail-item h4 {
+    margin: 0 0 0.3rem;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.detail-item p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.next-steps ul {
+    padding-left: 0;
+    margin: 0.5rem 0 0;
+    list-style: none;
+}
+
+.next-steps li {
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+    line-height: 1.5;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.next-steps li::before {
+    content: "•";
+    color: #8b5cf6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.action-btn,
+.edit-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+.edit-btn {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.edit-btn:hover {
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
+.no-ideas {
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1 / -1;
+    color: #6b7280;
+}
+
+.no-ideas p {
+    font-size: 1.2rem;
+}
+
+.create-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #c4b5fd;
+}
+
+.create-btn {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.create-btn:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+}
+
+.create-btn i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .ideas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .idea-card {
+        border-radius: 12px;
+    }
+
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+}

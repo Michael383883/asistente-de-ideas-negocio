@@ -1,0 +1,193 @@
+.ideas-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+.ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.idea-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.idea-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    padding: 1.5rem;
+    color: white;
+    position: relative;
+}
+
+.idea-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.concept {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.idea-section {
+    margin-bottom: 1.5rem;
+}
+
+.idea-section h3 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.idea-section p {
+    color: #34495e;
+    line-height: 1.5;
+}
+
+.idea-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #34495e;
+}
+
+.detail-item i {
+    color: #3498db;
+    width: 20px;
+    text-align: center;
+}
+
+.next-steps {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.next-steps h3 {
+    color: #2ecc71;
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.next-steps ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+.next-steps li {
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid #ecf0f1;
+}
+
+.inspire-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.inspire-btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.create-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.create-btn {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.create-btn:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+}
+
+.create-btn i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .ideas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+}

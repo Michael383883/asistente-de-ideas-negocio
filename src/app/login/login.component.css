@@ -1,0 +1,181 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    background-attachment: fixed;
+    animation: gradientBG 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+.login-card {
+    max-width: 450px;
+    width: 100%;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    mat-card-header {
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 0;
+
+        mat-card-title {
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #3f51b5;
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #3f51b5, #2196f3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        mat-card-subtitle {
+            font-size: 1rem;
+            color: #666;
+            opacity: 0.9;
+        }
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .full-width {
+        width: 100%;
+
+        mat-form-field {
+            .mat-form-field-outline {
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 8px;
+            }
+
+            .mat-form-field-wrapper {
+                padding-bottom: 0;
+            }
+
+            .mat-form-field-outline-start,
+            .mat-form-field-outline-gap,
+            .mat-form-field-outline-end {
+                border-width: 1px !important;
+                border-color: rgba(0, 0, 0, 0.1) !important;
+            }
+
+            &:hover .mat-form-field-outline-start,
+            &:hover .mat-form-field-outline-gap,
+            &:hover .mat-form-field-outline-end {
+                border-color: rgba(63, 81, 181, 0.3) !important;
+            }
+
+            &.mat-focused .mat-form-field-outline-start,
+            &.mat-focused .mat-form-field-outline-gap,
+            &.mat-focused .mat-form-field-outline-end {
+                border-width: 2px !important;
+                border-color: #3f51b5 !important;
+            }
+
+            .mat-input-element {
+                padding: 0.75em 0;
+                font-size: 1rem;
+                color: #333;
+            }
+
+            mat-label {
+                color: #666;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.login-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+    .login-button {
+        color: white !important;
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(250, 250, 250, 0.1);
+        background: linear-gradient(to right, #3f51b5, #2196f3);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(235, 227, 227, 0.2);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+
+        &:disabled {
+            background: #ccc;
+            transform: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.demo-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    background-color: rgba(63, 81, 181, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid #3f51b5;
+
+    strong {
+        color: #3f51b5;
+        font-weight: 600;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@media (max-width: 600px) {
+    .login-container {
+        padding: 1rem;
+    }
+
+    .login-card {
+        padding: 1.5rem;
+
+        mat-card-header mat-card-title {
+            font-size: 1.6rem;
+        }
+    }
+}

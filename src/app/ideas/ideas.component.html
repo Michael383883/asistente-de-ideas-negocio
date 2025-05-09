@@ -1,0 +1,58 @@
+<div class="ideas-container">
+    <div class="header">
+        <h1> Tus ideas son negocios</h1>
+        <p>Ideas personalizadas basadas en tus intereses y tendencias del mercado</p>
+    </div>
+
+    <div class="ideas-grid">
+        @for (idea of recentIdeas.slice(0, 3); track idea.name) {
+        <div class="idea-card">
+            <div class="card-header">
+                <span class="idea-badge">Nueva</span>
+                <h2>{{idea.name}}</h2>
+            </div>
+
+            <div class="card-content">
+                <p class="concept">{{idea.concept}}</p>
+
+                <div class="idea-section">
+                    <h3>Problema que resuelve:</h3>
+                    <p>{{idea.problem}}</p>
+                </div>
+
+                <div class="idea-details">
+                    <div class="detail-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span><strong>Mercado:</strong> {{idea.market}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-users"></i>
+                        <span><strong>Audiencia:</strong> {{idea.audience}}</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-star"></i>
+                        <span><strong>Valor único:</strong> {{idea.uniqueValue}}</span>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Próximos pasos:</h3>
+                    <ul>
+                        @for (step of idea.nextSteps; track step) {
+                        <li>{{step}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        }
+    </div>
+
+    <div class="create-section">
+        <button class="create-btn" (click)="navigateToCreate()">
+            <i class="fas fa-plus"></i> Crear mi propia idea
+        </button>
+    </div>
+</div>
