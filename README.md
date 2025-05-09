@@ -16,13 +16,13 @@ Este proyecto está desarrollado con **Angular 19** y tiene como objetivo ayudar
 ## Guía de instalación paso a paso
 
 ### 1. Descomprimir el proyecto
-Extrae todos los archivos del proyecto en la carpeta que prefieras.
+Descomprime todos los archivos del proyecto en la carpeta que prefieras.
 
 ### 2. Instalar dependencias
 Abre una terminal o línea de comandos y navega hasta la carpeta del proyecto:
 
 ```bash
-cd ruta/a/tu/carpeta-proyecto
+cd asistente-ideas-negocio
 ```
 
 Ejecuta el siguiente comando para instalar todas las dependencias:
