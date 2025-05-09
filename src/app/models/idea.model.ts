@@ -1,4 +1,4 @@
-// src/app/models/idea.model.ts
+
 export interface Idea {
     id: number;
     titulo: string;

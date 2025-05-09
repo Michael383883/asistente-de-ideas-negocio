@@ -52,7 +52,7 @@ export class AuthService {
     return this.currentUserSubject.value !== null;
   }
 
-  // ✅ Método necesario para que funcione auth.guard.ts reactivamente
+ 
   isAuthenticated$(): Observable<boolean> {
     return this.currentUser.pipe(map(user => user !== null));
   }

@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // ✅ Necesario para *ngIf
 import { RouterOutlet, RouterModule, Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { NavbarComponent } from './navbar/navbar.component'; // ✅ Asegúrate de que NavbarComponent sea standalone
+import { NavbarComponent } from './navbar/navbar.component'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,            // ✅ Necesario para *ngIf, *ngFor, etc.
+    CommonModule,           
     RouterModule,
     RouterOutlet,
     MatProgressSpinnerModule,
-    NavbarComponent          // ✅ Incluido si es standalone
+    NavbarComponent          
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

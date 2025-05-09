@@ -1,78 +1,60 @@
-# AsistenteIdeasNegocio - Proyecto Final (Angular 17+)
+# Asistente de Ideas de Negocio
 
-Bienvenido al Asistente de Ideas de Negocio! Este es un Proyecto Final del Curso de Angular, desarrollado con Angular versión 17 o superior.
+## Descripción
+Este proyecto está desarrollado con **Angular 19** y tiene como objetivo ayudarte a generar y gestionar ideas innovadoras para tu negocio. 
 
-## Instrucciones para Configurar el Proyecto
+## Desarrollador
+**Michael Asencio Quintana**  
+*Desarrollador jr*  
+[LinkedIn](https://www.linkedin.com/in/michaelasencio/)  
+[GitHub](https://github.com/Michael383883)
+
+## Requisitos previos
+- [Node.js](https://nodejs.org/) (incluye npm)
+- Angular CLI (`npm install -g @angular/cli`)
+
+## Guía de instalación paso a paso
 
 ### 1. Descomprimir el proyecto
-Primero, extrae el contenido de "Final Project - Angular Course" en tu directorio preferido.
+Extrae todos los archivos del proyecto en la carpeta que prefieras.
 
-### 2. Navegar al directorio del proyecto
+### 2. Instalar dependencias
+Abre una terminal o línea de comandos y navega hasta la carpeta del proyecto:
+
 ```bash
-cd sistente-ideas-negocio
-3. Instalar dependencias
-Antes de ejecutar el proyecto, instala todas las dependencias necesarias:
+cd ruta/a/tu/carpeta-proyecto
+```
 
-bash
+Ejecuta el siguiente comando para instalar todas las dependencias:
+
+```bash
 npm install
-4. Servidor de desarrollo
-Para iniciar el servidor de desarrollo, ejecuta:
+```
 
-bash
+### 3. Iniciar el servidor de desarrollo
+Una vez completada la instalación, ejecuta:
+
+```bash
 ng serve
-Luego abre tu navegador y visita:
+```
 
-http://localhost:4200/
-La aplicación se recargará automáticamente si modificas cualquier archivo fuente.
+### 4. Acceder a la aplicación
+Abre tu navegador web y visita:
+```
+http://localhost:4200
+```
 
-5. Puerto alternativo (si es necesario)
-Si el puerto 4200 está ocupado, puedes especificar otro puerto:
+## Características principales
+- Generación asistida de ideas de negocios
+- login
+- Interfaz intuitiva y amigable
+- Desarrollado con las últimas tecnologías de Angular
 
-bash
-ng serve --port 4201
-Información del proyecto
-Versión de Angular: 17+
+## Estructura del proyecto
+- `src/app/` - Componentes principales de la aplicación
+- `public/` - Recursos estáticos (imágenes, archivos, etc.)
+- `src/servis/` - Configuraciones de entorno
 
-Versión CLI: 19.2.11
 
-Tipo de proyecto: Proyecto Final de Curso
-
-Autor: [Michael Asencio Quintana]
-
-Curso: [Angular / IATEC]
-
-Comandos adicionales
-Compilar el proyecto
-Para compilar el proyecto para producción:
-
-bash
-ng build
-Los archivos compilados se guardarán en el directorio dist/.
-
-Ejecutar pruebas
-Para ejecutar pruebas unitarias:
-
-bash
-ng test
-Para pruebas end-to-end:
-
-bash
-ng e2e
-Generar componentes
-Para generar nuevos componentes, directivas o servicios:
-
-bash
-ng generate component nombre-del-componente
-Solución de problemas
-Si encuentras algún problema:
-
-Asegúrate de tener Node.js instalado (versión 16.x o superior recomendada)
-
-Verifica que Angular CLI esté instalado globalmente:
-
-bash
-npm install -g @angular/cli@latest
-Limpia la caché de npm si es necesario:
-
-bash
-npm cache clean --force
+## Licencia
+Este proyecto está licenciado bajo la MIT License.

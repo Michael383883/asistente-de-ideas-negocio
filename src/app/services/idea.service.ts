@@ -15,28 +15,28 @@ export class IdeaService {
     analyzeIdea(ideaData: any): Observable<any> {
 
         return this.mockAnalyzeIdea(ideaData).pipe(
-            delay(1500) 
+            delay(1500)
         );
     }
 
     saveIdea(ideaWithAnalysis: any): Observable<any> {
-    
-       
+
+
         console.log('Idea guardada:', ideaWithAnalysis);
         return of({ success: true }).pipe(delay(500));
     }
 
     getAllIdeas(): Observable<any[]> {
-        
+
         return of([]);
     }
 
-   
+
     private mockAnalyzeIdea(ideaData: any): Observable<any> {
-        
+
         const { skills, resources, investment, ideaType, targetAudience, timeAvailable } = ideaData;
 
-        // Generar una idea basada en los datos proporcionados
+
         let title = '';
         let description = '';
         let viabilityScore = 0;
@@ -146,26 +146,26 @@ export class IdeaService {
     }
 
     private calculateViabilityScore(ideaData: any): number {
-       
+
         let score = 50; // Puntuación base
 
-        
+
         const skillsCount = ideaData.skills.split(',').length;
         score += skillsCount * 5 * (skillsCount > 3 ? 15 : skillsCount * 5);
 
         const resourcesCount = ideaData.resources.split(',').length;
         score += resourcesCount > 3 ? 15 : resourcesCount * 5;
 
-     
+
         if (ideaData.investment > 10000) score += 10;
         else if (ideaData.investment > 5000) score += 5;
         else if (ideaData.investment < 1000) score -= 5;
 
-  
+
         if (ideaData.targetAudience) score += 5;
         if (ideaData.timeAvailable) score += 5;
 
-        
+
         return Math.max(0, Math.min(100, score));
     }
 

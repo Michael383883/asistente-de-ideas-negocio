@@ -147,13 +147,13 @@ export class IdeaGeneratorComponent implements OnInit {
   }
 
   private generateRelatedName(keywords: string[]): string {
-    // Seleccionar prefijo basado en el contenido de la idea
+
     let relevantPrefix = '';
 
-    // Respuesta a la primera pregunta para determinar posibles temas
+
     const firstResponse = this.responses.first.toLowerCase();
 
-    // Asignar prefijos basados en temas detectados
+
     if (firstResponse.includes('eco') || firstResponse.includes('ambiente') || firstResponse.includes('sostenible') ||
       firstResponse.includes('verde') || firstResponse.includes('natural')) {
       relevantPrefix = 'Eco';
@@ -173,20 +173,18 @@ export class IdeaGeneratorComponent implements OnInit {
       firstResponse.includes('mindfulness') || firstResponse.includes('paz')) {
       relevantPrefix = 'Zen';
     } else {
-      // Si no se detecta un tema específico, elegir un prefijo basado en el primer keyword
+
       const firstKeyword = keywords[0] || '';
       if (firstKeyword.length >= 3) {
         relevantPrefix = firstKeyword.charAt(0).toUpperCase() + firstKeyword.slice(1, 3);
       } else {
-        // Si no hay keywords o son muy cortos, elegir un prefijo aleatorio
+
         relevantPrefix = this.ideaNamePrefixes[Math.floor(Math.random() * this.ideaNamePrefixes.length)];
       }
     }
-
-    // Seleccionar sufijo basado en el contenido
     let relevantSuffix = '';
 
-    // Usar la respuesta de audiencia (cuarta) y valor único (quinta) para determinar el sufijo
+
     const audienceResponse = this.responses.fourth.toLowerCase();
     const valueResponse = this.responses.fifth.toLowerCase();
 
@@ -209,12 +207,12 @@ export class IdeaGeneratorComponent implements OnInit {
       valueResponse.includes('diseño')) {
       relevantSuffix = 'Studio';
     } else {
-      // Si no se detecta un tema específico para el sufijo, elegir uno basado en otro keyword
+
       const secondKeyword = keywords[1] || '';
       if (secondKeyword.length >= 3) {
         relevantSuffix = secondKeyword.charAt(0).toUpperCase() + secondKeyword.slice(1, 3);
       } else {
-        // Si no hay un segundo keyword, elegir un sufijo aleatorio
+
         relevantSuffix = this.ideaNameSuffixes[Math.floor(Math.random() * this.ideaNameSuffixes.length)];
       }
     }

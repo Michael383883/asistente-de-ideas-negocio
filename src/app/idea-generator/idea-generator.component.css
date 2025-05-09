@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 * {
     margin: 0;
     padding: 0;
@@ -99,7 +99,6 @@ body {
     color: white;
 }
 
-/* Contenido principal */
 .content-container {
     display: grid;
     grid-template-columns: minmax(300px, 3fr) minmax(300px, 2fr);
